@@ -16,6 +16,8 @@ Calibration may ask diagnostic questions only:
 
 After calibration, output readiness and feasibility. The first inquiry action belongs to the Inquiry Loop, not the Calibration Gate.
 
+Use the learner's language for all user-visible labels in calibration output. Do not leave labels such as `Readiness`, `Feasibility`, `Recommended path`, or `Scaffold` in English when the learner is using another language.
+
 ## When to Calibrate
 
 Run readiness calibration when:
@@ -105,7 +107,7 @@ Do not ask the learner to run an attention experiment, read a paper section, ins
 
 ## Output Template
 
-Use this shape after calibration:
+Use this shape after calibration, translated into the learner's language:
 
 ```text
 Readiness: foundation
@@ -113,4 +115,14 @@ Feasibility: risky but possible
 Why: you know basic neural-network vocabulary, but Q/K/V and dot products are not stable yet.
 Recommended path: start with attention as similarity-based information routing before multi-head attention.
 If you insist on the original goal: we can continue toward paper/code reading, but I will use high scaffolding and pause on prerequisite gaps.
+```
+
+For a Chinese learner, the same shape should become:
+
+```text
+准备度：基础
+可行性：有风险但可以尝试
+原因：你了解一些神经网络词汇，但 Q/K/V 和点积还不稳定。
+推荐路径：先从“注意力如何按相似度路由信息”开始，再进入多头注意力。
+如果你坚持原目标：可以继续朝论文/代码阅读推进，但我会使用高脚手架，并在前置缺口出现时提醒风险。
 ```

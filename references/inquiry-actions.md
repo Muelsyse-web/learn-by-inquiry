@@ -4,17 +4,28 @@ Use this reference whenever the learner needs a next step. Inquiry learning shou
 
 ## Inquiry Loop Turn
 
-Each Inquiry Loop turn gives one recommended action. Optional alternatives are allowed, but they must be shorter and secondary.
+Each Inquiry Loop turn gives one recommended action as a concrete micro-manual. Optional alternatives are allowed, but they must be shorter and secondary.
 
-Use this format:
+Use the learner's language for all user-visible labels. The English labels below are canonical placeholders, not text to copy when the learner is using another language. Use the local equivalent of this format:
 
 ```text
 Current subgoal: [state the active subgoal]
-Recommended action: [one concrete action]
-Why this action: [one sentence connecting action to subgoal]
+Recommended action: [a concrete micro-manual with materials, term/operation notes, numbered steps, completion standard, and stuck points]
 Observation question: [one question, preferably answerable only after doing the action]
 Bring back: [exact observation, artifact, quote, screenshot summary, code output, or note]
 Optional alternatives: [short alternatives if the learner cannot do the recommended action]
+[Support line: If you have any question about this action type, you can ask me anytime.]
+```
+
+Chinese label equivalents:
+
+```text
+当前小目标
+推荐行动
+观察问题
+带回内容
+可选替代
+如果你对这个[行动类型]的任何步骤有问题，可以随时问我。
 ```
 
 Ask exactly one question. Do not combine an observation question with extra reflection questions.
@@ -23,7 +34,59 @@ For concept-confusion repair, the first action should expose one observable feat
 
 Default action size: 15-30 minutes. For large goals, create an inquiry roadmap with a big question and a sequence of actions that can span days, weeks, or months.
 
-Before the first action, keep explanation to the minimum needed to understand the task. A good first response should make the learner do, observe, compare, create, or bring back evidence within a few sentences.
+Before an action, explain only operational knowledge needed to do the action. Do not explain why the action will reveal the target concept, why the phenomenon occurs, or the answer the action is meant to uncover. A good first response makes the learner do, observe, compare, create, or bring back evidence without needing to invent the method.
+
+## Action Manual Generator
+
+Convert every recommended action into a micro-manual. Do not rely on saved examples to cover future topics; generate the manual from the action type and the learner's readiness.
+
+1. Identify the action type: experiment, drawing/diagram, observation, comparison, source reading, code/tool run, AI interview, or artifact production.
+2. Choose the smallest observable object: one path, one output difference, one source claim, one confusing line, one code result, one diagram feature, or one artifact decision.
+3. Explain operational terms only. Define words such as "light clock", "ground observer", "source section", "run cell", or "screenshot summary" when needed, but do not explain the target concept's cause before the learner acts.
+4. Write numbered steps specific enough that the learner knows the first mark, click, line to read, variable to change, or sentence to copy.
+5. Add a completion standard: how the learner knows the action is finished.
+6. Add stuck-point support: what to do if they cannot draw, cannot access a source, cannot run code, or do not understand an operation.
+7. End with one localized support line that matches the action type, such as "If you have any question about this drawing task, you can ask me anytime."
+
+Adjust detail by readiness:
+
+- `novice` and `foundation`: include materials, term/operation notes, 4-7 small steps, a completion standard, and a stuck-point fallback.
+- `working`: include materials only when needed, 3-5 steps, and a clear completion standard.
+- `advanced`: keep the manual concise, but still state the exact object, method, output, and bring-back item.
+
+## Anti-Abstraction Check
+
+Before sending a recommended action, check:
+
+- Does the learner know what materials or tool to use?
+- Does the learner know the first physical mark, click, command, source section, or sentence to inspect?
+- Are invented or technical terms explained operationally?
+- Is there exactly one observation question?
+- Is `Bring back` a concrete output?
+- Is there no `Why this action` or cause explanation before the learner acts?
+- Is the support line localized and matched to the action type?
+
+If any answer is no, make the recommended action more concrete before sending.
+
+## Handling Learner Questions During an Action
+
+If the learner asks an operational question about the current action, answer it directly and briefly, then return to the current action step or observation question.
+
+Example pattern:
+
+```text
+[Answer the operational question.]
+Now return to the current observation question: [repeat the one observation question].
+```
+
+Localize the recovery sentence too. For Chinese:
+
+```text
+[回答操作问题。]
+现在回到刚才的观察问题：[重复那个观察问题]。
+```
+
+Do not switch to a different lesson, explanation, or goal unless the learner explicitly asks to stop, switch goals, summarize, or receive a direct explanation.
 
 ## Observation-First Questions
 
@@ -106,9 +169,20 @@ Prefer official, academic, or stable sources. If the topic may have changed, ver
 Good source-reading task:
 
 ```text
-Read the "Scaled Dot-Product Attention" subsection of the original Transformer paper or an official tutorial.
-Find one sentence, equation, or diagram element that seems central but confusing.
-Bring back that one item.
+Current subgoal: identify one concrete source item to investigate.
+Recommended action:
+Source: use the "Scaled Dot-Product Attention" subsection of the original Transformer paper or an official tutorial.
+Operation note: a subsection is only the part under that heading, not the whole paper.
+Steps:
+1. Open the source and find the exact subsection heading.
+2. Read only the first screen or first 2-4 paragraphs under that heading.
+3. Mark one sentence, equation, or diagram element that seems central but confusing.
+4. Copy that one item, or summarize it closely if copying is not possible.
+Completion standard: you have one identifiable source item, not a whole page of notes.
+If stuck: choose the first equation or diagram label you do not understand.
+Observation question: Which one source item did you choose?
+Bring back: that one item exactly enough that I can identify it.
+If you have any question about this reading task, you can ask me anytime.
 ```
 
 ### AI Interview
@@ -121,10 +195,24 @@ Environment-aware options:
 - In Claude Code, if side conversations are available, suggest `/btw`.
 - In other AI tools, provide a copyable prompt.
 
-Always include a return instruction:
+For AI interviews, still provide a full micro-manual. Do not only give a copyable prompt.
 
 ```text
-Bring back the other AI's answer and one part you distrust or do not understand.
+Current subgoal: use another AI as an inquiry instrument, not as an answer authority.
+Recommended action:
+Tool/material: a side AI conversation, `/side` in Codex if available, `/btw` in Claude Code if available, or any other AI chat.
+Operation note: the side AI is a source of claims to inspect. Do not accept its answer as true until you bring it back here.
+Steps:
+1. Open the side AI conversation or other AI tool.
+2. Paste the role prompt below.
+3. Ask it to propose one test, source, or distinction for [topic/question].
+4. Copy its concise answer.
+5. Mark one sentence you distrust or do not understand.
+Completion standard: you have the side AI's answer plus one marked sentence.
+If stuck: skip the side tool and ask me for a copyable prompt adapted to your topic.
+Observation question: Which sentence from the side AI do you distrust or not understand?
+Bring back: the side AI's answer and that one sentence.
+If you have any question about this AI interview task, you can ask me anytime.
 ```
 
 Copyable prompt template:
@@ -172,17 +260,31 @@ Phase 1: observe attention behavior with toy examples.
 Phase 2: connect observation to Q/K/V and dot products.
 Phase 3: inspect code or tensor shapes.
 Phase 4: compare single-head and multi-head behavior.
-First action: run or inspect one attention visualization and choose one case where the model attends somewhere surprising.
-Bring back: that one observation.
+First action manual:
+Source/tool: no external website needed. Use this toy attention table:
+`it -> animal: 0.70`, `it -> street: 0.20`, `it -> tired: 0.10`.
+Operation note: read `A -> B: 0.70` as "token A is mostly looking at token B"; the larger number is the stronger attention target.
+Steps:
+1. Look only at the three rows for `it`.
+2. Find the largest number.
+3. Record which token has the largest number.
+4. Decide whether that target is surprising or expected.
+Completion standard: you have one surprising token-target pair.
+If stuck: choose the row with `0.70`.
+Observation question: Which token does `it` attend to most strongly?
+Bring back: the token you chose and whether it surprised you.
+If you have any question about this observation task, you can ask me anytime.
 ```
 
 ## Avoid These Patterns
 
 - "Here is the explanation; now answer a comprehension question."
+- `Why this action` before the learner has acted.
 - For confusion repair: definitions, equations, tables, or a full analogy before the first action.
 - Giving away the mapping the action is supposed to uncover.
 - Turning one action into several hidden concept checks before the learner gets feedback.
 - "Go research this" without a concrete source, method, or output.
+- "Draw/observe/compare X" without saying how to draw, observe, or compare it.
 - Assigning papers or source code before readiness calibration.
 - Using another AI as a shortcut answer generator.
 - Giving a long roadmap with no first action.

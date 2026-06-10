@@ -33,7 +33,7 @@ Use when the learner is stuck.
 
 1. If the confusion depends on missing prerequisites, ask one calibration question first.
 2. Otherwise enter Inquiry Loop immediately.
-3. Give one recommended action or observation task.
+3. Give one recommended action as a concrete micro-manual or observation task.
 4. Ask one observation-first question.
 5. Do not reveal definitions, formulas, tables, full analogies, or target mappings before the learner attempts the action.
 6. After the learner answers, explain why their observation occurred, then set the next action.
@@ -44,9 +44,10 @@ Example shape:
 
 ```text
 You are likely stuck on what role each item plays. Do this tiny action first:
-[case or artifact]
-Question: [one observation-first prompt]
-Bring back: [one observation or choice]
+[localized recommended action micro-manual for one case or artifact]
+[localized observation question: one observation-first prompt]
+[localized bring-back instruction: one observation or choice]
+[localized support line]
 ```
 
 Bad first response:
@@ -59,10 +60,23 @@ Now answer this question.
 Better first response:
 
 ```text
-You are likely stuck on the roles, so let's make the roles visible before naming them.
-Tiny action: inspect the sentence "The animal did not cross the street because it was too tired." Focus only on `it` and choose one earlier word that helps decide what `it` refers to.
-Question: Which word did you choose?
-Bring back that one choice and the clue you used. Then I will explain why that clue matters and set the next action.
+你可能卡在“角色”上，所以先别急着背 Q/K/V。我们先观察一个角色感。
+
+当前小目标：只观察“谁在寻找线索”，暂时不命名 Q/K/V。
+
+推荐行动：
+需要材料：不需要工具。
+操作词说明：`it` 是指代不清的词；前面的某个词可能是判断它指谁的线索。
+步骤：
+1. 读这个句子："The animal did not cross the street because it was too tired."
+2. 只关注 `it`。
+3. 看 `it` 前面的词。
+4. 选一个最能帮助判断 `it` 指代谁的词。
+完成标准：你只选出了一个词。
+如果卡住：就在 `animal` 和 `street` 之间选一个；不要尝试一次解释所有角色。
+观察问题：你选的是哪个词？
+带回内容：带回那个词和你使用的线索。然后我会解释这个线索为什么重要，并设置下一步行动。
+如果你对这个观察任务的任何步骤有问题，可以随时问我。
 ```
 
 For Q/K/V confusion specifically, do not ask the learner to identify all three roles in the first turn. Start with only one role-like observation, such as which word, token, or vector is seeking information in a tiny case. Explain the mapping only after the learner brings back that first choice.
@@ -129,13 +143,14 @@ Use this format when the learner is ready to act:
 
 ```text
 Current subgoal: [active subgoal]
-Recommended action: [one action]
-Why this action: [one sentence]
+Recommended action: [one concrete micro-manual]
 Observation question: [one question]
 Bring back: [specific output]
 Optional alternatives: [short fallback options]
+[Support line matched to action type]
 ```
 
+Translate every label in this format into the learner's language; do not copy the English placeholders into non-English replies.
 Optional alternatives must not be longer or more prominent than the recommended action.
 
 For large goals, create a roadmap first, then only assign the first action.
