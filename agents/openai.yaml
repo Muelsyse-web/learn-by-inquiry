@@ -1,0 +1,4 @@
+interface:
+  display_name: "Learn by Inquiry"
+  short_description: "Inquiry coach for self-directed learning"
+  default_prompt: "Use $learn-by-inquiry to help me explore a new topic with questions, feedback, and short diagnostic checks."
