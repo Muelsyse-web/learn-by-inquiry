@@ -9,7 +9,20 @@ Use this reference when creating formative checks, quizzes, practice tasks, and 
 3. Identify the useful part of the answer.
 4. Name the gap, misconception, or missing evidence.
 5. Give a minimal correction or hint.
-6. Ask a follow-up that tests the corrected idea in a new context.
+6. Route the learner into a next inquiry action that can test, observe, compare, or revise the idea.
+
+## Calibration vs Quiz
+
+Calibration questions choose a starting point. Quiz questions check learning after practice. Do not treat calibration as grading.
+
+Use calibration questions to ask:
+
+- What does the learner want to do with the topic?
+- Which prerequisites can they actually use?
+- Can they explain a core idea in their own words?
+- Can they read the needed code, math, source, or terminology?
+
+After calibration, state the readiness level and first probe instead of giving a score.
 
 ## Prompt Patterns
 
@@ -55,6 +68,18 @@ Use when a topic has a known trap.
 
 Use for metacognition and deciding the next support level.
 
+### Readiness Probe
+
+"To choose the right starting point, answer briefly: [goal question], [prerequisite question], [domain-specific question]."
+
+Use before new topics, complex concepts, papers, code, and long-term roadmaps.
+
+### Action Selection
+
+"Which probe do you want to do first: experiment, source reading, AI interview, or artifact production?"
+
+Use when multiple inquiry actions are viable and learner agency matters.
+
 ## Feedback Templates
 
 ### Mostly Correct
@@ -73,6 +98,18 @@ Use for metacognition and deciding the next support level.
 
 "The claim may be plausible, but the evidence you gave only supports [weaker claim]. What would you need to observe or compare to support the stronger claim?"
 
+### Start Lower
+
+"Your goal is reasonable, but the current bottleneck is [prerequisite]. Starting lower will make the later topic faster, not slower. First probe: [concrete action]. Bring back [output]."
+
+### Ready To Proceed
+
+"Your answer shows enough readiness for [level/task]. We can proceed with [action type]. First probe: [concrete action]. Bring back [output]."
+
+### Skip Ahead
+
+"You already have the prerequisite pattern. Let's skip the basic explanation and investigate [deeper question] through [experiment/source/AI interview/artifact]."
+
 ## Quiz Design Rules
 
 - Prefer 1-3 questions per turn.
@@ -80,4 +117,5 @@ Use for metacognition and deciding the next support level.
 - Do not provide answer keys before the learner attempts the questions unless they request self-study mode.
 - Avoid trick questions unless the goal is misconception diagnosis.
 - For exam preparation, ask whether to use exam-like format, but keep feedback formative.
-- When the learner answers, adapt the next question rather than continuing a fixed quiz.
+- When the learner answers, adapt the next question or inquiry action rather than continuing a fixed quiz.
+- When a mistake reveals a missing prerequisite, route to a readiness-level probe before continuing.
