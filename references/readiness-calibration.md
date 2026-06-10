@@ -4,6 +4,18 @@ Use this reference before teaching new topics, complex concepts, research/projec
 
 Calibration is not an exam. It finds a productive starting point and prevents the assistant from assigning tasks far above the learner's current reach.
 
+## Hard Separation Rule
+
+Calibration chooses a path; it does not start the inquiry. Do not assign experiments, source readings, side AI interviews, artifact tasks, or observation probes during calibration.
+
+Calibration may ask diagnostic questions only:
+
+- goal/use-case questions,
+- prerequisite questions,
+- professional calibration questions.
+
+After calibration, output readiness and feasibility. The first inquiry action belongs to the Inquiry Loop, not the Calibration Gate.
+
 ## When to Calibrate
 
 Run readiness calibration when:
@@ -18,18 +30,21 @@ Use lightweight calibration for quick confusion repair, review, or follow-up que
 
 ## Default Calibration Flow
 
-Ask three kinds of questions before choosing depth:
+Ask at most three questions:
 
-1. **Goal/use case**: "What do you want to be able to do with this topic?"
-2. **Prerequisite background**: "What related tools, concepts, math, code, or readings have you already used?"
-3. **Domain-specific calibration**: Ask 1-3 questions that reveal whether the learner can work at the requested level.
+1. **Goal/use case**: what the learner wants to do with the topic.
+2. **Prerequisite background**: which related tools, concepts, math, code, readings, or domain vocabulary the learner can already use reliably.
+3. **Professional calibration**: one domain-specific diagnostic question that checks whether the learner can start at the requested level.
+
+Do not include a task to observe, read, experiment, ask another AI, or create an artifact. Those are Inquiry Loop actions.
 
 After the learner answers, state:
 
 - readiness level,
-- recommended starting point,
+- feasibility,
+- recommended path,
 - scaffold strength,
-- first inquiry action.
+- whether the original goal is safe to continue.
 
 ## Readiness Levels
 
@@ -40,11 +55,37 @@ After the learner answers, state:
 | `working` | Can apply core ideas with support | Inquiry tasks, source snippets, code walkthroughs, transfer cases | Over-explaining every step |
 | `advanced` | Can reason with formalism, code, papers, tradeoffs, and evidence | Open inquiry, critiques, replications, design choices | Reducing everything to basics |
 
+## Feasibility Levels
+
+| Level | Meaning | Response |
+| --- | --- | --- |
+| `feasible` | The learner can pursue the stated goal at the requested depth. | Proceed to Inquiry Loop with normal scaffolding. |
+| `risky but possible` | The learner can try the goal, but prerequisites are shaky. | Recommend a safer path; continue if the learner accepts or insists. |
+| `currently mismatched` | The stated goal is far above current readiness. | Gently redirect to a feasible subgoal; if the learner insists, continue with high scaffolding and explicit risk reminders. |
+
+## Mismatch Handling
+
+Use gentle redirection, not a hard refusal:
+
+```text
+I do not recommend executing the original goal directly right now, because [specific prerequisite gap].
+A more feasible path is [replacement subgoal].
+If you still want to continue with the original goal, I can do that, but I will use high scaffolding and call out the risks.
+```
+
+If the learner insists on the original goal:
+
+- proceed with the original goal,
+- use high scaffolding,
+- avoid pretending the prerequisite gap is solved,
+- name risk when assigning each difficult action,
+- offer a lower-level alternative in `Optional alternatives`.
+
 ## Scaffold Control
 
 Adjust support each turn based on the learner's response.
 
-- **High scaffold**: analogy, vocabulary unpacking, worked micro-example, one-step probe, narrow observation task.
+- **High scaffold**: analogy, vocabulary unpacking, worked micro-example, one-step probe, narrow observation task once the Inquiry Loop begins.
 - **Medium scaffold**: hints, contrasts, partial examples, guided transfer, bounded source reading.
 - **Low scaffold**: open inquiry, counterexamples, source/code/paper critique, experiment design, independent synthesis.
 
@@ -54,19 +95,13 @@ Raise or lower support by one level when the learner's response shows ease, conf
 
 If the learner wants to understand Transformer architecture, calibrate before explaining attention or assigning paper/code reading.
 
-Ask a small set such as:
+Ask at most three calibration questions:
 
-1. What do you want to do with Transformers: read papers, use libraries, implement one, or understand the intuition?
-2. Can you read basic Python or PyTorch code? Give a rough yes/no and one example of code you have read.
-3. Are vectors, matrices, dot products, and loss functions familiar enough that you can use them, or only words you have seen?
-4. In your current words, what do you think attention or Q/K/V is trying to accomplish?
+1. What do you want to do with Transformers: understand the intuition, read papers, use libraries, implement one, or debug/model-design work?
+2. Can you reliably use the prerequisites for that goal: Python/PyTorch, vectors and dot products, loss/training basics, or paper reading?
+3. In your current words, what problem do you think attention is trying to solve?
 
-Route based on answers:
-
-- If code and math are weak, start with token-to-vector intuition, similarity, and attention as weighted information gathering.
-- If math is workable but code is weak, start with diagrams, tensor shapes, and a small numerical attention example.
-- If code is workable but theory is weak, start with a minimal implementation or annotated library call.
-- If both are strong, use the original paper, implementation comparisons, ablations, or failure modes.
+Do not ask the learner to run an attention experiment, read a paper section, inspect code, or classify Q/K/V during calibration.
 
 ## Output Template
 
@@ -74,9 +109,8 @@ Use this shape after calibration:
 
 ```text
 Readiness: foundation
+Feasibility: risky but possible
 Why: you know basic neural-network vocabulary, but Q/K/V and dot products are not stable yet.
-Starting point: attention as similarity-weighted retrieval, before multi-head attention.
-Scaffold: high -> medium if the first probe goes well.
-Next probe: [15-30 minute inquiry action]
-Bring back: [specific observation/artifact/question]
+Recommended path: start with attention as similarity-based information routing before multi-head attention.
+If you insist on the original goal: we can continue toward paper/code reading, but I will use high scaffolding and pause on prerequisite gaps.
 ```

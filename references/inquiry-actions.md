@@ -2,18 +2,85 @@
 
 Use this reference whenever the learner needs a next step. Inquiry learning should produce actions and evidence, not only explanations and comprehension questions.
 
-## Action Menu Rule
+## Inquiry Loop Turn
 
-Offer either one recommended next probe or a menu of 2-4 actions. Each action must include:
+Each Inquiry Loop turn gives one recommended action. Optional alternatives are allowed, but they must be shorter and secondary.
 
-- **Goal**: what the action investigates.
-- **Task**: exact steps the learner should perform.
-- **Expected output**: what they should create, observe, compare, or decide.
-- **Bring back**: what to paste, summarize, screenshot, or report in the main conversation.
+Use this format:
 
-Default probe size: 15-30 minutes. For large goals, create an inquiry roadmap with a big question and a sequence of probes that can span days, weeks, or months.
+```text
+Current subgoal: [state the active subgoal]
+Recommended action: [one concrete action]
+Why this action: [one sentence connecting action to subgoal]
+Observation question: [one question, preferably answerable only after doing the action]
+Bring back: [exact observation, artifact, quote, screenshot summary, code output, or note]
+Optional alternatives: [short alternatives if the learner cannot do the recommended action]
+```
+
+Ask exactly one question. Do not combine an observation question with extra reflection questions.
+
+For concept-confusion repair, the first action should expose one observable feature or one contrast only. Avoid multi-part actions that ask the learner to classify several roles, fill a whole table, or answer several hidden checks before the first feedback.
+
+Default action size: 15-30 minutes. For large goals, create an inquiry roadmap with a big question and a sequence of actions that can span days, weeks, or months.
 
 Before the first action, keep explanation to the minimum needed to understand the task. A good first response should make the learner do, observe, compare, create, or bring back evidence within a few sentences.
+
+## Observation-First Questions
+
+Prefer questions that require the learner to do the action first.
+
+Good:
+
+```text
+After changing the prompt wording, which output changed: factual detail, tone, or structure?
+```
+
+```text
+After reading the source section, what claim does the author make that is supported by an equation, diagram, or example?
+```
+
+Use a thinking question only when the action cannot produce an observable fact:
+
+```text
+Which assumption would make this explanation fail?
+```
+
+If the learner answers by guessing and did not perform the action, do not treat the answer as evidence.
+
+## After the Learner Answers
+
+Respond in this order:
+
+1. Identify the observation, evidence, artifact, or difficulty the learner brought back.
+2. Explain why that result happened.
+3. Decide whether the current subgoal is complete.
+4. If incomplete and productive, set the next recommended action.
+5. If unproductive, redirect by lowering scaffold, switching action type, returning to calibration, or proposing a feasible subgoal.
+
+## Loop Control
+
+Continue when:
+
+```text
+subgoal is unfinished
+AND the current path is producing new observation, evidence, artifact, or understanding
+```
+
+Redirect when:
+
+```text
+subgoal is unfinished
+AND the current action path is not producing progress
+```
+
+Exit when:
+
+- the subgoal is complete,
+- the learner asks to stop, summarize, switch goals, or receive direct explanation,
+- the learner accepts a redirected goal,
+- required external conditions cannot be met.
+
+Never stop only because a fixed number of turns has passed.
 
 ## Four Default Action Types
 
@@ -40,8 +107,8 @@ Good source-reading task:
 
 ```text
 Read the "Scaled Dot-Product Attention" subsection of the original Transformer paper or an official tutorial.
-Write down: (1) what query/key/value each represent, (2) one equation or diagram you do not understand, (3) one claim you could test with a toy example.
-Bring back those three notes.
+Find one sentence, equation, or diagram element that seems central but confusing.
+Bring back that one item.
 ```
 
 ### AI Interview
@@ -57,7 +124,7 @@ Environment-aware options:
 Always include a return instruction:
 
 ```text
-Bring back the other AI's answer, plus one part that felt convincing and one part you distrust or do not understand.
+Bring back the other AI's answer and one part you distrust or do not understand.
 ```
 
 Copyable prompt template:
@@ -83,7 +150,7 @@ Examples:
 - Reading notes with claims/evidence/questions.
 - Comparison table.
 
-The artifact should be small enough to finish or draft in one probe.
+The artifact should be small enough to finish or draft in one action.
 
 ## Inquiry Roadmap
 
@@ -93,7 +160,7 @@ Create:
 
 1. A big inquiry question.
 2. 3-6 phases.
-3. A first 15-30 minute probe.
+3. A first 15-30 minute action.
 4. A checkpoint artifact for each phase.
 5. A rule for deciding whether to go deeper, branch, or move on.
 
@@ -105,16 +172,17 @@ Phase 1: observe attention behavior with toy examples.
 Phase 2: connect observation to Q/K/V and dot products.
 Phase 3: inspect code or tensor shapes.
 Phase 4: compare single-head and multi-head behavior.
-First probe: run or inspect one attention visualization and record two cases where the model attends differently.
-Bring back: your two observations and one hypothesis.
+First action: run or inspect one attention visualization and choose one case where the model attends somewhere surprising.
+Bring back: that one observation.
 ```
 
 ## Avoid These Patterns
 
 - "Here is the explanation; now answer a comprehension question."
-- For confusion repair: definitions, equations, tables, or a full analogy before the first probe.
-- Giving away the mapping the probe is supposed to uncover.
+- For confusion repair: definitions, equations, tables, or a full analogy before the first action.
+- Giving away the mapping the action is supposed to uncover.
+- Turning one action into several hidden concept checks before the learner gets feedback.
 - "Go research this" without a concrete source, method, or output.
 - Assigning papers or source code before readiness calibration.
 - Using another AI as a shortcut answer generator.
-- Giving a long roadmap with no first probe.
+- Giving a long roadmap with no first action.
