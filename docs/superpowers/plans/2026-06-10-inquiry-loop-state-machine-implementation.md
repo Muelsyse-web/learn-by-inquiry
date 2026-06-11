@@ -269,11 +269,12 @@ Use this format:
 ```text
 Current subgoal: [state the active subgoal]
 Recommended action: [one concrete action]
-Why this action: [one sentence connecting action to subgoal]
 Observation question: [one question, preferably answerable only after doing the action]
 Bring back: [exact observation, artifact, quote, screenshot summary, code output, or note]
 Optional alternatives: [short alternatives if the learner cannot do the recommended action]
 ```
+
+Historical note: `Why this action` was intentionally removed from the active turn format. Explain the reason only after the learner brings back an observation.
 
 Ask exactly one question. Do not combine an observation question with extra reflection questions.
 ````
@@ -430,11 +431,12 @@ Replace the existing `Action Menu Format` with:
 ```text
 Current subgoal: [active subgoal]
 Recommended action: [one action]
-Why this action: [one sentence]
 Observation question: [one question]
 Bring back: [specific output]
 Optional alternatives: [short fallback options]
 ```
+
+Historical note: `Why this action` was intentionally removed from the active turn format. Explain the reason only after the learner brings back an observation.
 
 Optional alternatives must not be longer or more prominent than the recommended action.
 ````
@@ -613,7 +615,7 @@ Prompt:
 Use $learn-by-inquiry at /Users/singsan/Documents/探究式学习/learn-by-inquiry to answer: Calibration is complete. My subgoal is to see why attention helps pronoun resolution. Give me the next step.
 ```
 
-Expected: response uses `Current subgoal`, `Recommended action`, `Why this action`, `Observation question`, `Bring back`, and optional alternatives. It asks one question only.
+Expected: response uses `Current subgoal`, `Recommended action`, `Observation question`, `Bring back`, and optional alternatives. It does not include `Why this action`, and it asks one question only.
 
 - [ ] **Step 5: Test no-progress redirect**
 

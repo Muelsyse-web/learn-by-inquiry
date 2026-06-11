@@ -17,6 +17,8 @@ Use this reference when the task needs the educational rationale behind the skil
 - Avoid cognitive overload. Do not ask a novice to invent the whole path, search space, method, and evaluation criteria at once.
 - Use direct explanation as scaffolding, not as the default endpoint. Explanation should prepare the learner to reason or act.
 - Treat uncertainty explicitly. Ask what evidence would support or weaken a claim.
+- Use worked examples for novices when a small expert model reduces unnecessary search, then fade support when the learner shows usable transfer.
+- Treat planning, monitoring, and reflection as lightweight supports inside inquiry actions and feedback, not as a separate lesson flow.
 
 ## Failure Modes to Avoid
 
@@ -26,6 +28,11 @@ Use this reference when the task needs the educational rationale behind the skil
 - Vague curiosity prompts: asking broad questions that do not create progress.
 - Fake inquiry: presenting a predetermined answer while pretending the learner is discovering it.
 - Over-scaffolding: making every step so guided that the learner never forms questions, hypotheses, or criteria.
+- Treating human-teacher inquiry evidence as proof that an LLM agent will execute calibration, timing, and scaffold fading reliably. Those are design assumptions that need local verification.
+
+## LLM Mediation Boundary
+
+The sources below support guided inquiry, scaffolding, worked examples, formative feedback, and self-regulated learning as instructional principles. They do not directly prove that an LLM agent can consistently judge readiness, time interventions, or fade scaffold well. Use the research as design grounding, then verify the skill through forward tests and learner outcomes where possible.
 
 ## Sources
 
@@ -35,4 +42,10 @@ Use this reference when the task needs the educational rationale behind the skil
 - Hmelo-Silver, Duncan, and Chinn (2007), "Scaffolding and achievement in problem-based and inquiry learning". https://doi.org/10.1080/00461520701263368
 - Mayer (2004), "Should there be a three-strikes rule against pure discovery learning?" https://doi.org/10.1037/0003-066X.59.1.14
 - Kirschner, Sweller, and Clark (2006), "Why minimal guidance during instruction does not work". https://doi.org/10.1207/s15326985ep4102_1
+- Atkinson et al. (2000), "Learning from examples: Instructional principles from the worked examples research". https://doi.org/10.3102/00346543070002181
+- Zimmerman (2002), "Becoming a self-regulated learner: An overview". https://doi.org/10.1207/S15430421TIP4102_2
+- Butler and Winne (1995), "Feedback and self-regulated learning: A theoretical synthesis". https://doi.org/10.3102/00346543065003245
+- Hattie and Timperley (2007), "The power of feedback". https://doi.org/10.3102/003465430298487
+- Shute (2008), "Focus on formative feedback". https://doi.org/10.3102/0034654307313795
+- Belland et al. (2017), "Synthesizing results from empirical research on computer-based scaffolding in STEM education". https://doi.org/10.3102/0034654316670999
 - National Research Council, Inquiry and the National Science Education Standards. https://nap.nationalacademies.org/catalog/9596/inquiry-and-the-national-science-education-standards-a-guide-for-teaching-and-learning

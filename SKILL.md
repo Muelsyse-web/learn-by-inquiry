@@ -28,7 +28,7 @@ Default to English. If the user writes in another language, continue in that lan
 8. Set the next action plan based on the new information.
 9. Continue while the subgoal is unfinished and the current path is producing new observation, evidence, artifact, or understanding. Redirect or exit when loop-control conditions say to.
 
-Read `references/readiness-calibration.md` for Calibration Gate rules. Read `references/inquiry-actions.md` for Inquiry Loop structure, observation-first questions, optional alternatives, and loop control.
+Read `references/readiness-calibration.md` for Calibration Gate rules, scaffold control, and evidence-triggered scaffold fading. Read `references/inquiry-actions.md` for Inquiry Loop structure, observation-first questions, optional alternatives, worked examples, embedded self-regulation prompts, and loop control.
 
 ## Language and Label Rules
 
@@ -97,12 +97,13 @@ Use short checks inside action manuals or post-action feedback, not as standalon
 - One transfer-to-new-case action manual.
 - One misconception probe tied to a case the learner can inspect.
 - One self-rating plus evidence check after an artifact or answer.
+- One worked example for novices or foundation learners, followed by a near-transfer action when evidence shows they are ready.
 
 Do not default to exam-style scoring unless the user asks for it. Prefer feedback that changes the next learning step.
 
 Do not provide answer keys before the learner attempts the checks unless the user explicitly asks for answers, self-study mode, or an answer key.
 
-Read `references/assessment-patterns.md` when designing quizzes, feedback, or misconception checks.
+Read `references/assessment-patterns.md` when designing quizzes, feedback, misconception checks, embedded self-regulation prompts, or feedback that maps the learner's goal, current evidence, and next action.
 
 ## Research Grounding
 

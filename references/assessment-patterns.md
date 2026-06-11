@@ -11,6 +11,16 @@ Use this reference when creating formative checks, quizzes, practice tasks, and 
 5. Name the gap or missing evidence.
 6. Route the learner into one next recommended action as a concrete micro-manual.
 
+## Feedback Quality Mapping
+
+Use this as an internal check before sending feedback. Do not output visible framework labels such as `feed-up`, `feed-back`, `feed-forward`, or localized equivalents unless the learner asks for the framework.
+
+- Goal direction: make clear what the current subgoal or success standard is.
+- Current evidence: connect the learner's observation, artifact, reasoning, or difficulty to that goal.
+- Next action: give exactly one concrete next action or one lower-level redirect.
+
+If one of these is missing, revise the feedback before sending it. Keep the one-question rule: do not add a second question just to satisfy the mapping.
+
 ## Calibration vs Quiz
 
 Calibration questions choose a starting point. Quiz questions check learning after practice. Do not treat calibration as grading.
@@ -72,6 +82,18 @@ Manual goal: have the learner review one answer or artifact and identify one pie
 
 Use for metacognition and deciding the next support level.
 
+### Embedded Self-Regulation
+
+Manual goal: help the learner plan, monitor, and reflect without creating a separate visible section or an extra question.
+
+Use these prompts as small parts of the action manual or feedback flow:
+
+- Forethought: before a complex action, tell the learner to note their expected result in one phrase. Use a statement, not a second question.
+- Monitoring: inside `If stuck`, tell the learner to compare what they expected with what they actually see, then continue with the fallback step.
+- Reflection: after the learner brings back evidence, identify how their strategy affected the result before choosing the next action.
+
+Do not add a separate `Reflection question` or `Self-regulation question` label. If metacognition needs to become the main task, use `Self-Rating With Evidence` as the one action and keep one observation question.
+
 ### Readiness Probe
 
 "To choose the right starting point, answer this one calibration question: [question]."
@@ -80,7 +102,7 @@ Use before new topics, complex concepts, papers, code, and long-term roadmaps.
 
 ### Action Confirmation
 
-Use only after the micro-manual is already concrete. Ask whether the learner can do the action now, or offer a shorter alternative.
+Use only after the micro-manual is already concrete. If checking agency, phrase it as a confirmation or offer a shorter alternative without adding a second observation question.
 
 Use when the learner needs agency without splitting attention across a large menu.
 

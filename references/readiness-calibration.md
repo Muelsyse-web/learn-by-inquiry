@@ -91,13 +91,35 @@ Adjust support each turn based on the learner's response.
 - **Medium scaffold**: hints, contrasts, partial examples, guided transfer, bounded source reading.
 - **Low scaffold**: open inquiry, counterexamples, source/code/paper critique, experiment design, independent synthesis.
 
-Raise or lower support by one level when the learner's response shows ease, confusion, missing prerequisites, or strong transfer.
+Adjust support by one level when the learner's response shows confusion, missing prerequisites, or strong transfer. Raise support when the learner needs more structure. Lower support only through the evidence-triggered scaffold fading rules below.
+
+## Scaffold Fading
+
+Fade scaffold by evidence, not by a fixed number of turns. Lower support by one level only when the learner's brought-back observation, artifact, reasoning, or near-transfer attempt shows they can proceed with less structure.
+
+Lower scaffold when:
+
+- the learner completes a near-transfer case without hints,
+- the learner answers two consecutive observation questions with usable evidence,
+- the learner explains what changed between two cases,
+- or the learner explicitly asks for more challenge and their recent evidence supports it.
+
+Do not lower scaffold when:
+
+- the learner's last answer was partly correct or showed a misconception,
+- the learner guessed without doing the action,
+- the learner is on the insistence path for a mismatched goal,
+- or the learner shows confusion, overload, or a missing prerequisite.
+
+Raise scaffold when the learner cannot execute the action, brings back no usable observation, answers by guessing, or reveals a prerequisite gap.
+
+When lowering scaffold, state it briefly in the learner's language, then give the next action. For Chinese, a compact line such as `你上一轮的证据足够稳定，我会减少一些提示。` is enough. Do not make scaffold changes the main content of the turn.
 
 ## Transformer Calibration Example
 
 If the learner wants to understand Transformer architecture, calibrate before explaining attention or assigning paper/code reading.
 
-Ask at most three calibration questions:
+Ask at most three calibration questions. This is a Calibration Gate exception; the one-question rule applies inside the Inquiry Loop.
 
 1. What do you want to do with Transformers: understand the intuition, read papers, use libraries, implement one, or debug/model-design work?
 2. Can you reliably use the prerequisites for that goal: Python/PyTorch, vectors and dot products, loss/training basics, or paper reading?
