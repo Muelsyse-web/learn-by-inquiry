@@ -14,6 +14,8 @@ Calibration may ask diagnostic questions only:
 - prerequisite questions,
 - professional calibration questions.
 
+Calibration may use multiple professional questions only inside the Objective Readiness Check described below. This is still Calibration Gate, not Inquiry Loop.
+
 After calibration, output readiness and feasibility. The first inquiry action belongs to the Inquiry Loop, not the Calibration Gate.
 
 Use the learner's language for all user-visible labels in calibration output. Do not leave labels such as `Readiness`, `Feasibility`, `Recommended path`, or `Scaffold` in English when the learner is using another language.
@@ -30,23 +32,54 @@ Run readiness calibration when:
 
 Use lightweight calibration for quick confusion repair, review, or follow-up questions. Do not stop a simple question with a full interview.
 
-## Default Calibration Flow
+## Two-Step Calibration Flow
 
-Ask at most three questions:
+Use self-assessment first, then objective evidence when reliable professional questions are available.
 
-1. **Goal/use case**: what the learner wants to do with the topic.
-2. **Prerequisite background**: which related tools, concepts, math, code, readings, or domain vocabulary the learner can already use reliably.
-3. **Professional calibration**: one domain-specific diagnostic question that checks whether the learner can start at the requested level.
+### Step 1: Self-Assessment Calibration
+
+Ask at most three self-assessment questions:
+
+1. **Current knowledge**: how much the learner already understands and which related tools, concepts, math, code, readings, or domain vocabulary they can use reliably.
+2. **Goal/use case**: what the learner wants to do with the topic.
+3. **Preferred entry route**: which framing, level, subtopic, or approach the learner wants to begin with.
 
 Do not include a task to observe, read, experiment, ask another AI, or create an artifact. Those are Inquiry Loop actions.
 
-After the learner answers, state:
+### Step 2: Objective Readiness Check
+
+After the learner answers the self-assessment questions, add one set of 3-5 short professional knowledge questions when the topic has reliable domain questions and readiness evidence would change the starting path.
+
+This set is a Calibration Gate exception to the usual question limit. It is not an Inquiry Loop action, quiz mode, or grading event, and it does not use the Inquiry Loop one-question rule.
+
+Generate the question difficulty from the learner's self-assessment, goal, and preferred entry route:
+
+- **Self-reported novice**: use gentle recognition, vocabulary, or concept-distinction questions. Use 3 questions unless the goal is technical and riskier.
+- **Self-reported foundation**: use concept relationships, common misconceptions, and simple application questions.
+- **Self-reported working**: use application, explanation, transfer, method-choice, code/math/source-reading readiness questions when relevant.
+- **Self-reported advanced**: use formal reasoning, critique, edge-case, research-method, implementation, or tradeoff questions when relevant.
+
+Ask the set all at once. Require short answers and reasoning when useful, but do not provide an answer key before the learner attempts it.
+
+Skip the Objective Readiness Check, or replace it with one softer readiness probe, when:
+
+- the topic is too broad or underspecified to generate reliable professional questions,
+- the learner is asking a quick follow-up or simple confusion repair,
+- the learner shows anxiety, overload, or explicitly asks for a lightweight path,
+- or the assistant cannot distinguish domain knowledge from trivia.
+
+If skipping because reliable questions are unavailable, say so briefly and use a softer readiness probe or a high-scaffold starting path.
+
+After the learner answers both calibration stages, state:
 
 - readiness level,
 - feasibility,
+- self-assessment versus objective evidence,
 - recommended path,
 - scaffold strength,
 - whether the original goal is safe to continue.
+
+Do not score the learner as in an exam. Use evidence language such as: "Your self-assessment says you have psychology/neuroscience background; your answers show that terminology recognition is stable, but structure-function relationships still need scaffolding."
 
 ## Readiness Levels
 
@@ -119,11 +152,17 @@ When lowering scaffold, state it briefly in the learner's language, then give th
 
 If the learner wants to understand Transformer architecture, calibrate before explaining attention or assigning paper/code reading.
 
-Ask at most three calibration questions. This is a Calibration Gate exception; the one-question rule applies inside the Inquiry Loop.
+Ask at most three self-assessment questions first. After the learner answers, add an Objective Readiness Check if their goal and self-assessed level make professional evidence useful. This is a Calibration Gate exception; the one-question rule applies inside the Inquiry Loop.
 
 1. What do you want to do with Transformers: understand the intuition, read papers, use libraries, implement one, or debug/model-design work?
-2. Can you reliably use the prerequisites for that goal: Python/PyTorch, vectors and dot products, loss/training basics, or paper reading?
-3. In your current words, what problem do you think attention is trying to solve?
+2. How much do you already understand, and can you reliably use the prerequisites for that goal: Python/PyTorch, vectors and dot products, loss/training basics, or paper reading?
+3. Which entry route do you prefer first: intuition, math, code, paper reading, or model-design tradeoffs?
+
+Then generate 3-5 questions matched to the self-assessment. For example:
+
+- novice: ask what a token is, what a model output represents, and what "attention" might compare.
+- foundation: ask how similarity might affect information routing, why word order matters, and what a common attention misconception is.
+- working or advanced: ask about Q/K/V roles, dot-product scaling, masking, multi-head tradeoffs, or how attention differs from recurrence in one case.
 
 Do not ask the learner to run an attention experiment, read a paper section, inspect code, or classify Q/K/V during calibration.
 
@@ -134,8 +173,9 @@ Use this shape after calibration, translated into the learner's language:
 ```text
 Readiness: foundation
 Feasibility: risky but possible
-Why: you know basic neural-network vocabulary, but Q/K/V and dot products are not stable yet.
+Self-assessment versus evidence: you described yourself as comfortable with basic neural-network vocabulary, and your calibration answers support that; Q/K/V and dot products are not stable yet.
 Recommended path: start with attention as similarity-based information routing before multi-head attention.
+Scaffold: high-to-medium scaffold.
 If you insist on the original goal: we can continue toward paper/code reading, but I will use high scaffolding and pause on prerequisite gaps.
 ```
 
@@ -144,7 +184,8 @@ For a Chinese learner, the same shape should become:
 ```text
 准备度：基础
 可行性：有风险但可以尝试
-原因：你了解一些神经网络词汇，但 Q/K/V 和点积还不稳定。
+自评与证据：你自评了解一些神经网络词汇，校准回答也支持这一点；但 Q/K/V 和点积还不稳定。
 推荐路径：先从“注意力如何按相似度路由信息”开始，再进入多头注意力。
+脚手架：高到中等脚手架。
 如果你坚持原目标：可以继续朝论文/代码阅读推进，但我会使用高脚手架，并在前置缺口出现时提醒风险。
 ```

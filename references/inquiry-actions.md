@@ -262,6 +262,59 @@ Examples:
 
 The artifact should be small enough to finish or draft in one action.
 
+## Advanced Strategy: Productive Failure
+
+Productive Failure is a restricted advanced strategy, not a default action type. Use it only when a learner may benefit from a bounded struggle before explanation, and only when all entry conditions are met.
+
+Entry conditions:
+
+- readiness is `working` or `advanced`,
+- the learner has partial prior knowledge that can generate plausible but incomplete attempts,
+- the target can fit a 15-25 minute exploration followed by immediate consolidation.
+
+Suggestion rules:
+
+- The agent may proactively suggest Productive Failure only when all entry conditions hold.
+- Briefly name the risk: the learner may feel temporarily stuck because the first turn is meant to surface attempts, not solve the concept.
+- Offer guided discovery or a worked example as the safer alternative.
+- If the learner is novice, foundation, currently mismatched, highly anxious, or missing prerequisites, do not use Productive Failure. Use guided discovery or a worked example instead.
+
+Use Productive Failure as a two-turn protocol:
+
+1. **Exploration turn**: give one normal Inquiry Loop action. Ask the learner to generate two or more attempts, record dead ends, and bring back both attempts and difficulty evidence. Do not correct conceptual mistakes yet. Give only operational help or downgrade if the learner cannot start.
+2. **Consolidation turn**: after the learner brings back evidence, map their attempts to the target structure, explain which ideas were productive, name failed assumptions, contrast with the canonical pattern, then assign one near-transfer action.
+
+Exploration turn shape:
+
+```text
+Current subgoal: [surface the learner's current model through bounded attempts]
+Recommended action: [15-25 minute attempt-generation micro-manual with materials, steps, completion standard, and stuck fallback]
+Observation question: [one question about the attempts or difficulty pattern]
+Bring back: [attempts, dead ends, and one difficulty signal]
+Optional alternatives: [guided discovery or worked example]
+[Support line matched to the action type]
+```
+
+Consolidation turn shape:
+
+```text
+[Identify the attempts and useful partial ideas.]
+[Explain why the useful ideas helped and why the failed assumptions broke down.]
+[Name the canonical contrast or structure.]
+Current subgoal: [test the consolidated idea in one near-transfer case]
+Recommended action: [one near-transfer micro-manual]
+Observation question: [one question about the near-transfer result]
+Bring back: [one concrete near-transfer output]
+[Support line matched to the action type]
+```
+
+Forced downgrade:
+
+- If the learner cannot start, brings back blank or guess-only output, shows anxiety or overload, exceeds the timebox, or exposes a prerequisite gap, exit Productive Failure.
+- Use guided discovery when the learner has partial evidence but needs narrower structure.
+- Use a worked example when the learner needs a model before another attempt.
+- State the downgrade briefly and nonjudgmentally, then give the safer action.
+
 ## Inquiry Roadmap
 
 Use for large goals such as "learn Transformers over a month" or "study BCI for a year."
@@ -305,6 +358,7 @@ If you have any question about this observation task, you can ask me anytime.
 - For confusion repair: definitions, equations, tables, or a full analogy before the first action.
 - Giving away the mapping the action is supposed to uncover.
 - Turning one action into several hidden concept checks before the learner gets feedback.
+- Using Productive Failure with novices, mismatched goals, anxiety, no prior knowledge, or no immediate consolidation turn.
 - "Go research this" without a concrete source, method, or output.
 - "Draw/observe/compare X" without saying how to draw, observe, or compare it.
 - Assigning papers or source code before readiness calibration.

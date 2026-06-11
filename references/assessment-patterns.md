@@ -4,7 +4,7 @@ Use this reference when creating formative checks, quizzes, practice tasks, and 
 
 ## Default Feedback Loop
 
-1. In Calibration Gate, ask one diagnostic question. In Inquiry Loop, assign one action manual and one observation-first question.
+1. In Calibration Gate, ask self-assessment questions and, when useful, one Objective Calibration Set. In Inquiry Loop, assign one action manual and one observation-first question.
 2. Require the learner to bring back reasoning, observation, or artifact evidence when feasible.
 3. Identify the useful part of the answer.
 4. Explain why the observation, result, difficulty, or misconception occurred.
@@ -27,6 +27,8 @@ Calibration questions choose a starting point. Quiz questions check learning aft
 
 Calibration questions belong to Calibration Gate and must not ask for inquiry actions. Quiz and formative questions belong to Inquiry Loop and must follow the one-question rule.
 
+An Objective Calibration Set is allowed after self-assessment when the topic has reliable professional knowledge checks. It is still calibration, not quiz mode. Ask the 3-5 questions all at once, use them only to choose readiness, feasibility, path, and scaffold, and do not assign a score.
+
 Use calibration questions to ask:
 
 - What does the learner want to do with the topic?
@@ -34,7 +36,7 @@ Use calibration questions to ask:
 - Can they explain a core idea in their own words?
 - Can they read the needed code, math, source, or terminology?
 
-After calibration, state the readiness level and feasibility instead of giving a score. The first inquiry action belongs to the Inquiry Loop.
+After calibration, compare self-assessment with objective evidence, then state the readiness level and feasibility instead of giving a score. The first inquiry action belongs to the Inquiry Loop.
 
 ## Prompt Patterns
 
@@ -100,6 +102,16 @@ Do not add a separate `Reflection question` or `Self-regulation question` label.
 
 Use before new topics, complex concepts, papers, code, and long-term roadmaps.
 
+### Objective Calibration Set
+
+Use after the learner completes self-assessment calibration and before assigning readiness, when reliable professional questions are available.
+
+Design intent: generate 3-5 short domain questions matched to the learner's self-reported level, goal, and preferred entry route. Make the questions diagnostic rather than trivia. Cover a small mix of vocabulary, concept distinction, prerequisite use, common misconception, and application or transfer when appropriate.
+
+Do not ask the learner to observe, read a source, run an experiment, interview another AI, or create an artifact. Do not output an answer key first. Do not treat the set as an exam or give a score.
+
+After the learner answers, use the set to compare self-assessment with evidence. If the learner self-rates high but the answers show missing prerequisites, lower readiness and explain the specific evidence kindly. If the learner self-rates low but answers show stable understanding, raise readiness or reduce scaffold.
+
 ### Action Confirmation
 
 Use only after the micro-manual is already concrete. If checking agency, phrase it as a confirmation or offer a shorter alternative without adding a second observation question.
@@ -137,6 +149,20 @@ Feedback intent: state that the answer shows enough readiness, name the action t
 ### Skip Ahead
 
 Feedback intent: state that the learner can skip the basic explanation, then immediately output a localized concrete action manual for an experiment, source reading, AI interview, or artifact task, with one observation question, one bring-back item, and the action-type support line.
+
+### Productive Failure Consolidation
+
+Feedback intent: use only after a Productive Failure exploration turn. Do not correct conceptual mistakes during the exploration turn unless the learner needs operational help or safety downgrade.
+
+During consolidation:
+
+1. Identify the learner's attempts, dead ends, and difficulty evidence.
+2. Name the productive partial ideas without pretending the attempts were fully correct.
+3. Explain which assumptions failed and why.
+4. Contrast the attempts with the canonical structure or solution pattern.
+5. Immediately output one near-transfer action manual with one observation question, one bring-back item, and support line.
+
+If the learner cannot start, exceeds the timebox, or brings back blank, guess-only, overloaded, anxious, or prerequisite-gap evidence, do not consolidate as if Productive Failure worked. Downgrade to guided discovery when the learner has partial evidence but needs narrower structure. Downgrade to a worked example when the learner needs an expert model before another attempt.
 
 ## Quiz Design Rules
 

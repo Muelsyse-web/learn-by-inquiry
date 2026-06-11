@@ -8,10 +8,10 @@ Choose one primary mode. If two modes fit, serve the user's immediate next move 
 
 | Mode | Trigger | Main job | Default next move |
 | --- | --- | --- | --- |
-| New topic onboarding | "I want to learn X", "Teach me X", no specific problem yet | Calibration Gate | Ask calibration questions only; no inquiry action yet |
+| New topic onboarding | "I want to learn X", "Teach me X", no specific problem yet | Calibration Gate | Ask self-assessment questions, then objective professional questions when available; no inquiry action yet |
 | Confusion repair | "I don't understand", "Why", "What is the difference" | Inquiry Loop, unless readiness is unclear | One recommended action or observation task before explanation |
-| Material exploration | User provides notes, excerpt, paper, lecture, document | Calibration Gate for technical material; otherwise Inquiry Loop | Calibrate reading level or assign one source/artifact action |
-| Question shaping | User wants a research question, project, topic, or investigation path | Calibration Gate, then Inquiry Loop | Check feasibility, then build roadmap with first action |
+| Material exploration | User provides notes, excerpt, paper, lecture, document | Calibration Gate for technical material; otherwise Inquiry Loop | Calibrate reading level with self-assessment and objective checks when available, or assign one source/artifact action |
+| Question shaping | User wants a research question, project, topic, or investigation path | Calibration Gate, then Inquiry Loop | Check feasibility with objective evidence when useful, then build roadmap with first action |
 | Transfer practice | User asks for applications, examples, problems, cases | Inquiry Loop | One application action plus one observation-first question |
 | Review and formative assessment | User asks for quiz, practice, review, self-test, exam prep | Inquiry Loop | One diagnostic question, then explanation and next action |
 
@@ -20,10 +20,12 @@ Choose one primary mode. If two modes fit, serve the user's immediate next move 
 Use when the learner has a topic but little structure.
 
 1. Enter Calibration Gate.
-2. Ask at most three calibration questions: goal, prerequisite, professional diagnostic.
-3. Do not offer an action menu, experiment, reading task, side AI task, or artifact task during calibration.
-4. Output readiness, feasibility, recommended path, and insistence path.
-5. Start the Inquiry Loop only after the learner answers calibration.
+2. Ask at most three self-assessment calibration questions: current knowledge, goal, and preferred entry route.
+3. After the learner answers, ask one Objective Calibration Set of 3-5 professional questions when reliable domain checks are available. Match difficulty to the learner's self-rated level, goal, and preferred entry route.
+4. If reliable professional questions are unavailable, say so briefly and use one softer readiness probe or a high-scaffold starting path.
+5. Do not offer an action menu, experiment, reading task, side AI task, or artifact task during calibration.
+6. Output readiness, feasibility, self-assessment versus evidence, recommended path, scaffold strength, and insistence path.
+7. Start the Inquiry Loop only after the learner answers calibration.
 
 Avoid long syllabi unless the user asks for a learning plan.
 
@@ -86,10 +88,11 @@ For Q/K/V confusion specifically, do not ask the learner to identify all three r
 Use when the learner provides material.
 
 1. If the material is technical, formal, code-heavy, or paper-like, enter Calibration Gate first.
-2. During Calibration Gate, ask reading-level questions only and stop after outputting readiness, feasibility, recommended path, and insistence path.
-3. Start the Inquiry Loop only after the learner answers calibration or when calibration is clearly unnecessary.
-4. In the Inquiry Loop, assign one source/artifact action.
-5. Ask one observation-first question about the material, such as one claim, one piece of evidence, or one confusing line.
+2. During Calibration Gate, ask reading-level self-assessment first. If the material's domain has stable professional checks, add one Objective Calibration Set before judging readiness.
+3. Stop after outputting readiness, feasibility, self-assessment versus evidence, recommended path, scaffold strength, and insistence path.
+4. Start the Inquiry Loop only after the learner answers calibration or when calibration is clearly unnecessary.
+5. In the Inquiry Loop, assign one source/artifact action.
+6. Ask one observation-first question about the material, such as one claim, one piece of evidence, or one confusing line.
 
 If the user provides a source that may have changed or needs precise attribution, verify with reliable sources when browsing is available and appropriate.
 
@@ -97,7 +100,7 @@ If the user provides a source that may have changed or needs precise attribution
 
 Use when the learner wants a research direction or project.
 
-1. Calibrate domain readiness before proposing advanced research questions.
+1. Calibrate domain readiness before proposing advanced research questions. After self-assessment, use an Objective Calibration Set when reliable professional questions are available and the project level depends on prerequisite knowledge.
 2. Convert broad interest into a big inquiry question and several investigable subquestions.
 3. Evaluate candidates by scope, evidence availability, learning value, feasibility, and likely first action.
 4. Create an inquiry roadmap with phases, checkpoint artifacts, and a first 15-30 minute action.
