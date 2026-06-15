@@ -30,6 +30,18 @@ Read this before modifying the skill from another chat window. These are user re
 - Explanation happens after the learner reports an observation, difficulty, result, or artifact.
 - After explaining the observed result, set the next action plan.
 
+## Visual Companion Branch
+
+- The visual companion is a short branch inside Inquiry Loop, not a third state and not a separate teaching mode.
+- Offer it only for high-value visual actions: experiments, observation flows, diagrams, step sequences, spatial relations, or structure maps.
+- Use a lightweight localized prompt near the support line, such as `需要我把这个步骤可视化吗？这会多消耗一些 token。`
+- Do not show the prompt on every turn.
+- Do not show it during ordinary Calibration Gate turns. Calibration may be visualized only when the learner explicitly asks for a route map or option map, and it must not assign an inquiry action.
+- Before entering the branch, internally save a `visual_state_token`: phase, subgoal, action, observation question, bring-back item, scaffold level, and return rule.
+- If local browser or localhost visualization is available, use it for a short visual page with flow diagrams, step diagrams, highlighted observation points, or simple click choices. If unavailable, automatically downgrade to Mermaid, ASCII, or a concise text diagram and continue.
+- After the visual, summarize the visual observation or selection, restore the saved node, and repeat the original observation question plus bring-back item.
+- The branch must not add a second learning goal, reveal the target concept's cause or answer before the learner acts, replace the original observation question, or become an ongoing canvas/design conversation unless the learner explicitly switches tasks.
+
 ## Phase 1/2 Fusion Decisions
 
 - `Worked Example` is a default action type, not a separate mode. It must still use the Inquiry Loop shell and end with one near-transfer observation question.
@@ -128,4 +140,9 @@ PYTHONPATH=/private/tmp/codex-pyyaml /Users/singsan/.cache/codex-runtimes/codex-
   - scaffold fading after strong transfer evidence,
   - Productive Failure suggestion for a working or advanced learner with a safer alternative,
   - Productive Failure downgrade after cannot-start, blank, guess-only, anxious, timebox-exceeded, or prerequisite-gap evidence,
+  - Chinese visual companion prompt appears only on a high-value experiment or drawing action,
+  - Chinese "可视化一下" request creates a short visual branch and then repeats the original observation question,
+  - Chinese "光钟怎么画？" operational drawing question answers drawing procedure and returns to the original observation question,
+  - unavailable local visualization downgrades to Mermaid, ASCII, or a concise text diagram without blocking the inquiry loop,
+  - ordinary Calibration Gate does not proactively show the visual companion prompt,
   - English response to ensure English labels still work.

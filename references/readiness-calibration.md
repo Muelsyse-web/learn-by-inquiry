@@ -8,6 +8,8 @@ Calibration is not an exam. It finds a productive starting point and prevents th
 
 Calibration chooses a path; it does not start the inquiry. Do not assign experiments, source readings, side AI interviews, artifact tasks, or observation probes during calibration.
 
+Do not add the visual companion prompt to ordinary Calibration Gate turns. Visualizing a calibration route, option set, or learning roadmap is allowed only when the learner explicitly asks for it, and it must not become an inquiry action or observation probe.
+
 Calibration may ask diagnostic questions only:
 
 - goal/use-case questions,

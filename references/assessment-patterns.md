@@ -11,6 +11,8 @@ Use this reference when creating formative checks, quizzes, practice tasks, and 
 5. Name the gap or missing evidence.
 6. Route the learner into one next recommended action as a concrete micro-manual.
 
+If a visual companion branch was used, treat the visual selection, clicked option, diagram observation, or downgraded Mermaid/ASCII note as evidence for the current action only. Use it to resume the same feedback loop; do not treat it as a separate quiz, second question, or new subgoal.
+
 ## Feedback Quality Mapping
 
 Use this as an internal check before sending feedback. Do not output visible framework labels such as `feed-up`, `feed-back`, `feed-forward`, or localized equivalents unless the learner asks for the framework.
@@ -26,6 +28,8 @@ If one of these is missing, revise the feedback before sending it. Keep the one-
 Calibration questions choose a starting point. Quiz questions check learning after practice. Do not treat calibration as grading.
 
 Calibration questions belong to Calibration Gate and must not ask for inquiry actions. Quiz and formative questions belong to Inquiry Loop and must follow the one-question rule.
+
+The visual companion must follow the same boundary: it can support a current Inquiry Loop action, but it must not turn calibration into an experiment or add extra formative questions.
 
 An Objective Calibration Set is allowed after self-assessment when the topic has reliable professional knowledge checks. It is still calibration, not quiz mode. Ask the 3-5 questions all at once, use them only to choose readiness, feasibility, path, and scaffold, and do not assign a score.
 

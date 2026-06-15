@@ -96,6 +96,8 @@ Use when the learner provides material.
 
 If the user provides a source that may have changed or needs precise attribution, verify with reliable sources when browsing is available and appropriate.
 
+Visual companion note: if the material contains a process, diagram, table layout, experiment, UI, or spatial relationship that the learner must inspect, the Inquiry Loop may offer the lightweight visual prompt after the action manual. Do not offer it while still calibrating reading readiness unless the learner explicitly asks for a visual route map.
+
 ## Question Shaping
 
 Use when the learner wants a research direction or project.
@@ -151,9 +153,23 @@ Observation question: [one question]
 Bring back: [specific output]
 Optional alternatives: [short fallback options]
 [Support line matched to action type]
+[Optional visual prompt on high-value visual turns only]
 ```
 
 Translate every label in this format into the learner's language; do not copy the English placeholders into non-English replies.
 Optional alternatives must not be longer or more prominent than the recommended action.
 
 For large goals, create a roadmap first, then only assign the first action.
+
+## Visual Companion Routing
+
+The visual companion is a temporary branch inside Inquiry Loop, not a separate mode in the mode table.
+
+Enter it when both conditions hold:
+
+- the user asks for visualization, drawing, diagram, or canvas support, or the current action has high visual value and the learner accepts the lightweight prompt;
+- the branch can preserve the original subgoal, action, observation question, and bring-back item.
+
+Before entering, internally save a `visual_state_token`. After the visual, restore the original node and repeat the observation question and bring-back item. If local visualization is unavailable, downgrade to Mermaid, ASCII, or text diagram support instead of blocking the learning loop.
+
+Never route an ordinary Calibration Gate answer into visual companion by default. Calibration may show a visual roadmap only on explicit request, and that visual must not assign an inquiry action.

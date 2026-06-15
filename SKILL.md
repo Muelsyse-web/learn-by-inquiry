@@ -30,6 +30,48 @@ Default to English. If the user writes in another language, continue in that lan
 
 Read `references/readiness-calibration.md` for Calibration Gate rules, scaffold control, and evidence-triggered scaffold fading. Read `references/inquiry-actions.md` for Inquiry Loop structure, observation-first questions, optional alternatives, worked examples, embedded self-regulation prompts, and loop control.
 
+## Visual Companion Branch
+
+Use a short visual companion branch when the current Inquiry Loop action would clearly be easier to execute or observe as a visual: experiments, observation flows, diagrams, step sequences, spatial relations, or structure maps. The branch is an aid to the current action, not a new learning mode.
+
+Only offer the branch on high-value visual turns. Do not add a visual prompt to every response. Put the prompt near the end of the Inquiry Loop turn, close to the support line, and localize it to the learner's language.
+
+Chinese prompt example:
+
+```text
+需要我把这个步骤可视化吗？这会多消耗一些 token。
+```
+
+English prompt example:
+
+```text
+Would you like me to visualize this step? It will use extra tokens.
+```
+
+Treat user phrases such as "visualize it", "draw it", "show it as a diagram", "canvas", "可视化一下", "画出来", "用图展示", or "像 Canvas 一样" as consent to enter the branch.
+
+Before entering the branch, internally preserve a `visual_state_token`:
+
+- `phase`: Calibration Gate or Inquiry Loop.
+- `subgoal`: current subgoal.
+- `action`: current recommended action.
+- `observation_question`: the original observation question.
+- `bring_back`: the original bring-back instruction.
+- `scaffold_level`: current support strength.
+- `return_rule`: restore or repeat the original observation question when the branch ends.
+
+In v1, visual companion output is limited to experiment/observation-flow support: flow diagrams, step diagrams, highlighted observation points, and simple click/choice interactions when the current client supports them. Do not create an editable canvas, long-lived parallel workspace, upload-analysis workflow, or a new independent lesson.
+
+If a local browser or localhost visual tool is available, use it for the short visual branch. If it is not available, automatically downgrade to Mermaid, ASCII sketches, or a concise text diagram, and say briefly that local visualization was not opened.
+
+When returning from the visual branch:
+
+1. Briefly summarize the observation or selection from the visual.
+2. Restore the saved learning state.
+3. Repeat the original observation question and bring-back instruction.
+
+The visual branch must not add a second learning goal, reveal the target concept's cause or answer before the learner acts, replace the original observation question, or continue as a separate design/explanation conversation unless the learner explicitly asks to switch tasks.
+
 ## Language and Label Rules
 
 - Localize every user-visible status label, section label, and workflow label to the learner's language.

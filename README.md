@@ -12,6 +12,7 @@ The skill is designed to avoid the common drift from inquiry learning into guide
 - Offers inquiry action menus with concrete next probes.
 - Builds long-term inquiry roadmaps from large goals, broken into 15-30 minute probes.
 - Supports side AI interviews through Codex `/side`, Claude Code `/btw`, or copyable prompts for other AI tools.
+- Offers an optional visual companion branch for high-value visual actions such as experiments, observation flows, diagrams, and step sequences.
 
 ## Install
 
@@ -66,6 +67,18 @@ The skill treats inquiry learning as an evidence-building process:
 4. Offer a concrete probe or action menu.
 5. Ask the learner to bring back an observation, source note, artifact, or question.
 6. Use feedback and formative checks to choose the next probe.
+
+## Visual Companion
+
+When an Inquiry Loop action would be easier to execute visually, the skill may add a lightweight localized prompt such as:
+
+```text
+需要我把这个步骤可视化吗？这会多消耗一些 token。
+```
+
+If the learner accepts, the skill treats visualization as a short branch from the current action. It preserves the current learning state, supports the action with a flowchart, step diagram, highlighted observation point, or simple click choice when the client allows it, then returns to the original observation question and bring-back instruction.
+
+If a local browser or localhost visual tool is unavailable, the skill should automatically fall back to Mermaid, ASCII, or a concise text diagram instead of interrupting the learning loop.
 
 ## Repository Structure
 
