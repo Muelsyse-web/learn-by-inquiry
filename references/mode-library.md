@@ -6,6 +6,10 @@ Use this reference when choosing how to respond after diagnosing the learner's s
 
 Choose one primary mode. If two modes fit, serve the user's immediate next move first.
 
+If this skill was explicitly invoked and the request starts a new topic, complex topic, technical learning goal, project learning goal, or long-term learning goal, override immediate-task routing and enter Calibration Gate first. A phrase such as "start with installation", "configure the environment first", "read this first", or "先从安装开始" is a preferred route after calibration, not permission to skip readiness questions.
+
+Only do a requested task before calibration when the learner explicitly says it must happen before calibration, before questions, or before 出题. After completing that task, return immediately to the normal self-assessment calibration questions.
+
 | Mode | Trigger | Main job | Default next move |
 | --- | --- | --- | --- |
 | New topic onboarding | "I want to learn X", "Teach me X", no specific problem yet | Calibration Gate | Ask self-assessment questions, then objective professional questions when available; no inquiry action yet |
@@ -24,8 +28,9 @@ Use when the learner has a topic but little structure.
 3. After the learner answers, ask one Objective Calibration Set of 3-5 professional questions when reliable domain checks are available. Match difficulty to the learner's self-rated level, goal, and preferred entry route.
 4. If reliable professional questions are unavailable, say so briefly and use one softer readiness probe or a high-scaffold starting path.
 5. Do not offer an action menu, experiment, reading task, side AI task, or artifact task during calibration.
-6. Output readiness, feasibility, self-assessment versus evidence, recommended path, scaffold strength, and insistence path.
-7. Start the Inquiry Loop only after the learner answers calibration.
+6. If the learner asked to start with a concrete task such as installation, include that task as a route preference in the later recommended path after readiness is known.
+7. Output readiness, feasibility, self-assessment versus evidence, recommended path, scaffold strength, and insistence path.
+8. Start the Inquiry Loop only after the learner answers calibration.
 
 Avoid long syllabi unless the user asks for a learning plan.
 

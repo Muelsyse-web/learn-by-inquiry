@@ -1,4 +1,7 @@
 interface:
   display_name: "Learn by Inquiry"
   short_description: "Inquiry coach for self-directed learning"
-  default_prompt: "Use $learn-by-inquiry to help me explore a new topic with questions, feedback, and short diagnostic checks."
+  default_prompt: "Use $learn-by-inquiry / 我想通过探究式学习来学习：[主题]"
+
+policy:
+  allow_implicit_invocation: false

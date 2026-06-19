@@ -26,6 +26,7 @@ Use the learner's language for all user-visible labels in calibration output. Do
 
 Run readiness calibration when:
 
+- This skill was explicitly invoked for a new topic, complex topic, technical learning goal, project learning goal, source/code/paper learning goal, or long-term learning goal.
 - The learner starts a new topic.
 - The topic normally requires prerequisites, such as code, math, research methods, theory, or domain vocabulary.
 - The learner asks for papers, source code, architecture, proofs, or advanced applications.
@@ -33,6 +34,12 @@ Run readiness calibration when:
 - The learner wants a long-term inquiry roadmap.
 
 Use lightweight calibration for quick confusion repair, review, or follow-up questions. Do not stop a simple question with a full interview.
+
+## Task Before Calibration
+
+If explicit invocation includes a first-task request such as "start with installation", "configure the environment first", "read this first", or "先从安装开始", remember it as a preferred starting route after calibration. Do not execute that task before the self-assessment questions.
+
+Only do a task before calibration when the learner explicitly says it must happen before calibration, before questions, or before 出题. Complete only that task, then immediately return to the same self-assessment calibration shape below.
 
 ## Two-Step Calibration Flow
 
