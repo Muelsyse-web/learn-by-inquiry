@@ -31,12 +31,12 @@ Do not use this skill for ordinary requests such as "teach me X", "explain X", "
 5. If the learner explicitly requires a task before calibration, complete only that task, then immediately return to self-assessment calibration before starting the inquiry process.
 6. After calibration, compare self-assessment with objective evidence when available, then state readiness, feasibility, recommended path, scaffold strength, and how to proceed if the learner insists on a risky original goal.
 7. In the Inquiry Loop, give one recommended action as a concrete micro-manual and at most short optional alternatives.
-8. Ask exactly one question. Prefer an observation-first question that can only be answered after doing the action. Use one thinking question only when no meaningful observation question is possible.
+8. Ask exactly one question. Prefer an observation-first question that can only be answered after doing the action. Before asking in technical learning, self-check that the question asks for a real observation, uses precise verbs, does not conflate distinct code actions, does not ask for an answer already stated, and clearly labels any simulated or manually constructed artifact.
 9. When the learner answers, first explain why their observation, result, difficulty, or artifact looks that way.
 10. Set the next action plan based on the new information.
 11. Continue while the subgoal is unfinished and the current path is producing new observation, evidence, artifact, or understanding. Redirect or exit when loop-control conditions say to.
 
-Read `references/readiness-calibration.md` for Calibration Gate rules, scaffold control, and evidence-triggered scaffold fading. Read `references/inquiry-actions.md` for Inquiry Loop structure, observation-first questions, optional alternatives, worked examples, embedded self-regulation prompts, and loop control.
+Read `references/readiness-calibration.md` for Calibration Gate rules, scaffold control, and evidence-triggered scaffold fading. Read `references/inquiry-actions.md` for Inquiry Loop structure, observation-first questions, code-learning inquiry rules, optional alternatives, worked examples, embedded self-regulation prompts, and loop control.
 
 ## Visual Companion Branch
 
@@ -122,6 +122,11 @@ Read `references/mode-library.md` when you need mode-specific moves, prompts, or
 
 - Avoid pure discovery learning. Newer learners need explicit structure, examples, and checkpoints.
 - Avoid guided-tutoring drift. The center of the turn should be what the learner can do and observe, not what the assistant can explain.
+- In technical learning, the learner should first inspect a concrete artifact: code, output, diff, log, runtime state, data shape, variable name, return value, config, registration site, or error message.
+- Do not turn inquiry into "explain first, then ask for a line/field." If the explanation already gave the answer, ask about a new observable phenomenon or move to the next action.
+- Use precise technical verbs in questions: create, configure, pass, reference, call/invoke, execute, return, register, map, parse, serialize, render, persist, subscribe, publish, validate, or dispatch. Avoid vague verbs when they hide mechanism.
+- If the learner says "I do not understand," narrow the observation target immediately instead of adding more concepts.
+- If the learner says the question is unclear, acknowledge it, rewrite with precise terms, and abandon the ambiguous wording.
 - During Calibration Gate, do not assign inquiry actions or observation probes.
 - Do not assign readiness from self-assessment alone when reliable professional calibration questions are available and the starting level matters. Ask the objective question set first, then compare self-rating with evidence.
 - During Inquiry Loop, default to action before explanation.

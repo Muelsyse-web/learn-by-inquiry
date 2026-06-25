@@ -169,6 +169,41 @@ Which assumption would make this explanation fail?
 
 If the learner answers by guessing and did not perform the action, do not treat the answer as evidence.
 
+## Code Learning Inquiry
+
+Use for source code, APIs, frameworks, CLIs, runtime behavior, graphs, state machines, data pipelines, UI behavior, tests, logs, and debugging traces.
+
+Before a code action, label the example type when relevant:
+
+- `real runnable shape`: real integration structure; may only lack credentials or environment values.
+- `local simulation`: external behavior is replaced with a fake, stub, fixture, or mock.
+- `minimal mechanism slice`: only enough code or data to observe one mechanism.
+- `manual observation object`: hand-constructed data used to inspect a shape or boundary.
+
+If the learner asks for real code that only lacks credentials, do not silently replace it with a fake or simulation.
+
+Ask the learner to observe one mechanism at a time. Prefer running, inspecting, comparing, tracing, or modifying a small artifact before explanation.
+
+Question self-check:
+
+1. Does this require observing code/output/artifact rather than repeating my explanation?
+2. Is the verb technically accurate?
+3. Does the question conflate separate actions such as create, configure, pass, reference, call, execute, return, register, map, parse, serialize, render, persist, subscribe, publish, validate, or dispatch?
+4. Did I already state the answer in the previous explanation?
+5. If the artifact is fake, stubbed, mocked, simulated, or manually constructed, did I label its layer and say what would produce it in the real flow?
+
+Use role-revealing names in teaching code. Avoid names that only state a type when several roles share that type.
+
+Good pattern:
+
+- `[capability_name]`: function, tool, component, route, model, or service itself.
+- `[capability_name]_request`: one request to use it.
+- `[capability_name]_result`: the returned or executed result.
+- `[source]_message_with_[request_or_result]`: message or event carrying that role.
+- `[thing]_registry_entry`: registration/mapping record.
+
+Do not mix conflicting learning goals in one example. Choose one current example type: real runnable shape, local simulation, or minimal mechanism slice.
+
 ## After the Learner Answers
 
 Respond in this order:
